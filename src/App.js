@@ -21,6 +21,7 @@ const App = () => {
     axios
       .get("https://swapi.dev/api/people/?page=" + activePage)
       .then((res) => {
+        console.log(res)
 
         setNumberOfPages(Math.ceil(res.data.count / res.data.results.length));
         const searchResults = res.data.results.filter((item) => {
